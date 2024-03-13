@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  body {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Remove default margin */
+    display: flex; /* Make the body a flex container */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(
+        to right,
+        #404040 0%,
+        #404040 74%,
+        #404040 74%,
+        #404040 100%
+  );
+    /*background-color: #404040; /* Apply background color to the entire page */
+  }
+  .form-section {
+    width: 100%; 
+    flex: 3; /* Takes up 3/4 of the space */
+    padding: 20px;
+    /*min-height: 100vh;*/
+   /* height: 100vh;  Make it 100% of viewport height */
+   
+  }
+  .purple-rectangle {
+  background-color: #800080; /* This is a purple color, adjust the shade as you prefer */
+  border-radius: 10px; /* Adjust as needed for desired roundness */
+  padding: 20px; /* Add padding inside the rectangle */
+  color: white; /* Text color inside the rectangle */
+  margin-bottom: 20px; /* Add some space below the rectangle */
+}
+
+.purple-rectangle img {
+  top: 37px;
+  left: 73px;
+  width: 140px;
+  height: 146px;
+  border-radius: 12px;
+  border: 1px solid #020002;
+  box-sizing: border-box;
+  box-shadow: 15px 12px 0px #d848e0;
+  background-image: url(./image.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.purple-rectangle-2 {
+  background-color: #800080; /* This is a purple color */
+  border-radius: 10px; /* Rounded corners */
+  display: inline-flex; /* Only takes up as much space as needed */
+  align-items: center; /* Centers items vertically */
+  padding: 0 10px; /* Padding around the text */
+  color: white; /* Text color */
+  margin-bottom: 20px; /* Spacing below the rectangle */
+  white-space: nowrap; /* Ensures the text inside doesn't wrap */
+}
+
+
+.moving-section {
+            width: 100%;
+            background-color: #000; /* Example background color */
+            color: white; /* Example text color */
+            padding: 20px;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            transition: transform 0.3s ease-out;
+            border-radius: 15px;
+        }
+
+
+   .moving-section {
+    /*NO SIRVE WIDTH/*width: 100%; /*SE AGREGA ESTO PARA QUE SEA CONTINUO EL COLOR SIN NECESIDAD DE UNA SCROLLBAR*/ /*no sirve*/
+    background-color: #000; /* Placeholder color */
+    color: white;
+    flex: 1; /* Takes up 1/4 of the space */
+    padding: 10px; 
+   /* position: relative; /* Needed for translation */
+    /*transition: transform 0.3s; /* Smooth transition for movement */
+   /* position: sticky; /* Make the element stick to the top of the viewport */
+    /*top: 0; /* Distance from the top of the viewport */
+  }
+
+  .moving-section {
+    width: 25%;
+    background-color: #000; /* Example background color */
+    color: white; /* Example text color */
+    /*padding: 20px;*/
+    /*padding-right: 5%; /* Additional padding on the left */
+    position: fixed; /* Fixed position to allow movement */
+    top: 25%; /* Initial top position */
+    left: 75%; /* Initial left position */
+    transform: translateY(-50%); /* Vertically center */
+    transition: transform 0.3s ease-out; /* Smooth transition for the movement */
+}
+
+
+  .input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .input-group label,
+  .input-group input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .input-group label:last-child,
+  .input-group input:last-child {
+    margin-right: 0;
+  }
+  input[type="text"], textarea {
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+
+    /* Add this style to your existing CSS */
+    .input-full-width {
+    margin-bottom: 10px; /* Consistent with your other input groups */
+  }
+
+  .input-full-width label,
+  .input-full-width input {
+    width: 100%; /* Full width for both label and input */
+    display: block; /* Stack label and input on top of each other */
+  }
+
+  input[type="text"], textarea {
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+
+  /* If you want to keep the spacing consistent with the .input-group */
+  .input-full-width {
+    padding: 0 5px;
+  }
+
+  /* Add further CSS styling as needed */
+   /* Existing styles... */
+
+   .input-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  /* Assuming you want some space between the inputs */
+  .input-group > div {
+    flex: 1; /* Each input group div takes equal space */
+    padding: 0 5px; /* Add some padding between inputs */
+  }
+
+  .input-group label,
+  .input-group input {
+    display: block; /* Make label and input stack on top of each other */
+    width: 100%; /* Make label and input take full width of their parent */
+    margin-bottom: 5px; /* Add some space below each label */
+  }
+
+  .input-group > div {
+    padding-bottom: 10px; /* Adds padding to the bottom of each div */
+}
+
+  /* Remove right margin on the last input as it's not needed */
+  .input-group > div:last-child {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  input[type="text"], textarea {
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+
+  /* Responsive adjustments can be made with media queries if needed */
+  @media (max-width: 768px) {
+    .input-group {
+      flex-direction: column;
+    }
+    .input-group > div {
+      padding: 0; /* Remove padding for smaller screens */
+    }
+  }
+/*NEW*/
+  input[type="text"], textarea {
+    /* Existing styles... */
+    border-radius: 20px; /* Adjust as needed for desired roundness */
+  }
+
+  /* If you also want to add some styles to the input to make it look better: */
+  input[type="text"], textarea {
+    padding: 10px;
+    border: 1px solid #ccc; /* Example border, adjust as needed */
+    box-sizing: border-box;
+    border-radius: 20px; /* This makes the corners round */
+    outline: none; /* Removes the default focus highlight */
+  }
+
+  /* Styling input on focus for better user experience */
+  input[type="text"]:focus, textarea:focus {
+    border-color: #666; /* Changes border color on focus */
+    box-shadow: 0 0 8px rgba(102, 175, 233, .6); /* Optional: Adds a glow effect on focus */
+  }
+
+  input[type="text"], textarea {
+    /* Existing styles... */
+    border-radius: 20px; /* As previously set for roundness */
+    background-color: #666; /* Light black (dark grey) background */
+    color: white; /* Change text color to white for better readability */
+    border: 1px solid #444; /* Slightly darker border for some contrast */
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  input[type="text"]:focus, textarea:focus {
+    border-color: #555; /* Optional: Darker border on focus for contrast */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Optional: Adds a subtle glow effect on focus */
+  }
+
+  /* CSS for the label with the ID 'representative-name' */
+label[for="representative-name"] {
+  color: white; /* Set the label text color to white */
+}
+
+  /* CSS for the label with the ID 'representative-lastname' */
+  label[for="representative-lastname"] {
+  color: white; /* Set the label text color to white */
+}
+
+ /* CSS for the label with the ID 'large-input' */
+ label[for="large-input"] {
+  color: white; /* Set the label text color to white */
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="form-section">
+    <div class="purple-rectangle">
+  <!--<h1>NLegal</h1>-->
+  <a href="login.html">
+    <img src="./images/logo.jpg">
+  </a>
+    </div>
+    <div class="purple-rectangle-2"> 
+        <h2>LA EMPRESA</h2>
+    </div>
+  
+  
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Nombre</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Apellidos</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+</div> <!--ESTE ES EL DIV DEL BACKGROUND GRIS OSCURO-->
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Número de escritura</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Número del Notario</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Número de Notaría</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Lugar de Protocolización</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Lugar de Registro</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Número de Folio</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <!--Empieza sección de Escritura Publica del Poder-->
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Número de Escritura</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Nombre del Notario</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Número de Notaría</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Lugar de Protocolización</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Lugar de Registro</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Número de Folio</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Domicilio</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">R.F.C.</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-full-width">
+    <label for="large-input">Registro Patronal</label>
+    <input type="text" id="large-input" name="large_input">
+  </div>
+
+  <!--AQUÍ EMPIEZA EL TRABAJADOR-->
+
+  <!--<div class="purple-rectangle-2"> 
+  <h2>EL TRABAJADOR</h2>
+  </div>
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Nombre</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Apellidos</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+</div>
+
+<div class="input-group">
+    <div>
+      <label for="representative-name">Nombre</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Apellidos</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+</div>
+-->
+
+
+    
+    <div class="purple-rectangle-2"> 
+        <h2>EL TRABAJADOR</h2>
+    </div>
+<div class="input-group">
+    <div>
+      <label for="representative-name">Nombre</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Apellidos</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+</div> <!--ESTE ES EL DIV DEL BACKGROUND GRIS OSCURO-->
+
+  <div class="input-group">
+    <div>
+      <label for="representative-name">Tipo de la Identificación Oficial</label>
+      <input type="text" id="representative-name" name="representative_name">
+    </div>
+    <div>
+      <label for="representative-lastname">Folio de la Identificación Oficial</label>
+      <input type="text" id="representative-lastname" name="representative_lastname">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div>
+        <label for="representative-lastname">Nacionalidad</label>
+        <input type="text" id="representative-lastname" name="representative_lastname">
+      </div>
+      <div>
+        <label for="representative-lastname">Sexo</label>
+        <input type="text" id="representative-lastname" name="representative_lastname">
+      </div>
+      <div>
+        <label for="representative-lastname">Estado Civil</label>
+        <input type="text" id="representative-lastname" name="representative_lastname">
+      </div>
+  </div>
+
+
+
+  
+  <!-- Repeat structure for other fields as necessary -->
+</div>
+
+<div class="advice-section"></div>
+<div class="moving-section">
+<div class="advice-section">
+  <h2 >Consejo Legal...</h2>
+  <p id="dynamic-advice">Recuerda que tienes 15 días para presentar tu amparo indirecto, a partir del día en que se publique la norma que vulnere tus derechos, en el Diario Oficial de la Federación o en las gacetas de cada entidad federativa, o a partir de que se te notifique el acto de la autoridad que afecte tus derechos.<br> 
+   <br> Si la mera existencia de la norma que publicó la autoridad te afecta, sin que tenga que ser aplicada, tienes 30 días para presentar tu amparo indirecto.</p>
+</div>
+</div>
+<script>
+    document.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+
+        var movingSection = document.querySelector('.moving-section');
+
+        var moveRateX = 0.5;
+        var moveRateY = 0.5;
+
+        var moveX = scrollX * moveRateX;
+        var moveY = scrollY * moveRateY;
+
+        movingSection.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
+    });
+
+    var adviceList = [
+    "Razones por las que como empresario quieres usar esta aplicación: \n\n1. Control de tus documentos, si te llega una inspección los tendrás todos  a la mano, y no tendrá problemas con los inspectores del trabajo. Por ejemplo: Si un empleado pierde su Contrato, podrías salvarte de una multa o meterte en problema mayor",
+    "Aquí va el nombre de la empresa donde vas a trabajar.",
+    "Recuerda que se te pedirán datos de: \n\n1. Tu constancia de situación fiscal, \n\n2. Tu tarjeta de registro patronal, \n\n3. Tu escritura constitutiva y \n\n4. El Poder de quien firma, si es que aplica. \n\nRevisa nuestras políticas y aviso de privacidad. Tus datos estarán encriptados y nadie interno o externo tendrá acceso a ellos.",
+    // Add more advice as needed
+    ];
+var adviceIndex = 0;
+
+function changeAdvice() {
+    document.getElementById('dynamic-advice').innerText = adviceList[adviceIndex];
+    adviceIndex = (adviceIndex + 1) % adviceList.length; // Cycle through the advice list
+}
+
+setInterval(changeAdvice, 2500); // Change advice every 2.5 seconds
+
+
+
+</script>
+
+</body>
+</html>

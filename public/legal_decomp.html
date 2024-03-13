@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Interface Design</title>
+<style>
+  .card {
+    position: absolute;
+    border-radius: 24px;
+    box-sizing: border-box;
+  }
+  .card-light {
+    position: absolute;
+    top: 62px;
+    left: 0px;
+    width: 100vw;
+    height: 123px;
+    background-color: #e5e5e5;
+    opacity: 0.41;
+    z-index: 1;
+  }
+
+  .button {
+  cursor: pointer;
+  top: 203px;
+  left: 672px;
+  width: 120px;
+  height: 36px;
+  padding: 0px 8px;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #cc0ed6;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Source Sans Pro";
+  line-height: 16px;
+  outline: none;
+}
+
+  /*PDF*/
+
+.pdf-container iframe {
+  width: 100%; /* Make the iframe responsive */
+  height: 100%; /* Set height to full viewport height or adjust as needed */
+  border: none; /* Removes the border around the iframe */
+  padding: 0; /* Ensure there's no padding inside the iframe */
+}
+
+
+.pdf-container {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Adjust as necessary */
+  height: 100%; /* Adjust as necessary */
+  border: 1px solid #ccc; /* Optional, for visual styling */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Optional, for visual styling */
+}
+
+  .card-dark {
+    top: 0px;
+    left: 0px;
+    width: 150vw;
+    height: 150vh;
+    background-color: #323232;
+  }
+
+  .card-dark2 {
+    top: 0px;
+    right: 4px;
+    width: 1447px;
+    height: 1325px;
+    background-color: #323232;
+  }
+
+
+
+  /* Adapting React styles to CSS */
+  .text-style1 {
+    color: #ffffff;
+    font-size: 37px;
+    font-family: "Roboto";
+    font-style: italic;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .text-style2 {
+  display: none; /* Hide it initially */
+  position: absolute;
+  top: 100px; /* Adjust based on the desired space between .card-purple and the text */
+  padding: 0 20px; /* Adds padding on the left and right */
+  /* Existing .text-style2 styles */
+  color: #000000;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 31px;
+  /*display: flex; /* Use flexbox */
+  /*align-items: center; /* Center vertically, if needed */
+  /*justify-content: center;  Center horizontally, if applicable */
+  text-align: center; /* Center text lines */
+}
+
+
+.card-small-dark {
+  position: relative; /* Ensures a positioning context for descendants */
+  top: 336px;
+  left: 26px;
+  width: 476px;
+  height: 426px;
+  background-color: #161616;
+  border: 1px solid #323232;
+  border-radius: 53px;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text lines */
+  padding: 20px; /* Adds padding inside the card for content */
+}
+
+  .card-purple {
+    position: absolute; /* Positioned absolutely within .card-small-dark */
+  top: 23px; /* Adjusted to position within .card-small-dark */
+  left: 23px; /* Adjusted to align with the padding of .card-small-dark */
+  width: 441px;
+  height: 91px;
+  background-color: #9026a4;
+  border-radius: 34px;
+  }
+
+  /* Image style adapted */
+  .image {
+    top: 345px;
+    left: 470px;
+    width: 516px;
+    height: 786px;
+    border-radius: 8px;
+    background-image: url('./image.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute; /* Added to position the image correctly */
+  }
+
+  .card-small-dark2 {
+  position: relative; /* Ensures a positioning context for descendants */
+  top: calc(336px + 36px);
+  left: 26px;
+  width: 476px;
+  height: 426px;
+  background-color: #161616;
+  border: 1px solid #323232;
+  border-radius: 53px;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text lines */
+  padding: 20px; /* Adds padding inside the card for content */
+}
+
+.card-blue {
+  position: absolute; /* Positioned absolutely within .card-small-dark */
+  top: 23px; /* Adjusted to position within .card-small-dark */
+  left: 23px; /* Adjusted to align with the padding of .card-small-dark */
+  width: 441px;
+  height: 91px;
+    background-color: #2c7adf;
+    border-radius: 34px;
+  }
+
+
+
+/*Text Colors*/
+.yellow-text {
+  color: yellow;
+}
+
+.white-text {
+  color: white;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+</style>
+</head>
+<body>
+
+
+
+  
+
+<div class="card card-dark">
+  <!-- Content here -->
+</div>
+
+<div class="card card-light">
+    <button id="button">Decompose</button>
+</div>
+
+<div class="card card-small-dark">
+    <div class="card card-purple">
+        <!-- Content here -->
+    <div class="text-style2">
+        <!-- Default text or dynamic content here -->
+        <span class="yellow-text">Generative Model:</span><br>
+        <span class="white-text">Stand-alone: P(<span class="blue-text">X</span>)</span><br>
+        
+        Joint: P(X,Y)
+        <br>
+        Discriminative Model:
+        Conditional: P(Y|X)
+      </div>
+</div>
+</div>
+
+<div class="card card-small-dark2">
+    <div class="card card-blue">
+    <div class="text-style2">
+        <!-- Default text or dynamic content here -->
+        <span class="yellow-text">Predictive Model:</span><br>
+        <span class="white-text">Legal Domain: Contract Law<br>
+            - Contract Formation<br>
+            -- Offer<br>
+                 ---- Invitation to Treat<br>
+                 ---- Specificity of Terms<br>
+            -- Acceptance<br>
+           ----- Express Acceptance<br>
+           ----- Non-Monetary  Consideration</span><br>
+
+      </div>
+    </div>
+</div>
+
+<div class="text-style1">
+  Prediction
+</div>
+
+<div class="image">
+  <!-- Image background set through CSS -->
+</div>
+
+<div class="pdf-container">
+    <iframe src="./sentencias/sentencia.PDF" width="100%" height="100vh" frameborder="0" style="border: none;"></iframe>
+  </div>
+  
+
+  <script>
+    document.getElementById('button').addEventListener('click', function() {
+      var textElement = document.querySelector('.text-style2');
+      if (textElement.style.display === 'none') {
+        textElement.style.display = 'block'; // Show the text-style2 content
+      } else {
+        textElement.style.display = 'none'; // Optional: Hide it again if clicked again
+      }
+    });
+  </script>
+</body>
+</html>

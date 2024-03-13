@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  .card-purple {
+  position: absolute;
+  top: 140px;
+  left: 445px;
+  width: 560px;
+  height: 618px;
+  background-color: #cc0ed6;
+  border-radius: 24px;
+  z-index: 1; 
+}
+    .card {
+    position: absolute;
+    top: 132px;
+    left: 437px;
+    width: 560px;
+    height: 618px;
+    background-color: #161616;
+    border-radius: 24px;
+    border: 1px solid #323232;
+    box-sizing: border-box;
+    z-index: 2; /* Ensure it's on top */
+  }
+
+  .card-purple-logo {
+  position:relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px; /* Adjusted width */
+  height: 311px; /* Adjusted height */
+  background-color: #cc0ed6;
+  border-radius: 24px;
+  z-index: 3; 
+}
+
+.card-purple-logo img {
+  position:relative;
+  top: 41%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  width: 280px; /* Adjusted width */
+  height: 311px; /* Adjusted height */
+  background-color: #cc0ed6;
+  border-radius: 24px;
+  z-index: 4; 
+}
+/* .card-purple-logo img {
+    position: absolute;
+      left: -6%; Adjusted left position 
+      width: auto; 
+      height: 90%;
+      object-fit: cover; /* Scale the image while preserving aspect ratio 
+      border-radius: 24px; 
+    }*/
+
+  .button {
+    position: relative; /* Changed to relative */
+      top: 500px; /* Adjusted top position */
+      left: 150px;
+      transform: translateX(-50%);
+      width: 233px;
+      height: 56px;
+      padding: 0px 8px;
+      border: 0;
+      box-sizing: border-box;
+      border-radius: 24px;
+      background-color: #8b0ef4;
+      color: #ffffff;
+      font-size: 18px;
+      font-family: "Source Sans Pro";
+      line-height: 20px;
+      outline: none;
+      cursor: pointer;
+      z-index: 4; 
+}
+
+.button-Plaintiff {
+    position: relative; /* Changed to relative */
+      top: 500px; /* Adjusted top position */
+      left: 175px;
+      transform: translateX(-50%);
+      width: 233px;
+      height: 56px;
+      padding: 0px 8px;
+      border: 0;
+      box-sizing: border-box;
+      border-radius: 24px;
+      background-color: #cc0ed6;
+      color: #ffffff;
+      font-size: 18px;
+      font-family: "Source Sans Pro";
+      line-height: 20px;
+      outline: none;
+      cursor: pointer;
+}
+
+    /* Input Field */
+    .input-field {
+      position: absolute;
+      top: 70%; /* Adjusted top position */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 40px;
+      padding: 0 10px;
+      border: 2px solid #ccc;
+      border-radius: 24px;
+      background-color: #323232;
+      font-size: 16px;
+      font-family: "Source Sans Pro", sans-serif;
+      outline: none;
+    }
+
+
+ 
+
+
+
+</style>
+</head>
+<body>
+    <!-- Image container -->
+  <div class="container">
+    <img src="./images/suit.png" alt="Suit Image">
+  </div>
+
+<div class="card-purple"></div>
+<div class="card">
+
+<!-- Button -->
+<a href="defendant.html">
+  <button class="button">Defendant</button>
+</a>
+
+<!-- Button --> <!--contract-input.html-->
+<a href="def-plaintiff.html">
+    <button class="button-Plaintiff">Plaintiff</button>
+  </a>
+  
+<!-- <button class="button-Plaintiff">Plaintiff</button>-->
+<div class="card-purple-logo">
+<img src="./images/logo-zoomin.jpg" alt="Picture"></div>
+
+
+
+<input type="text" class="input-field" placeholder="Password">
+
+
+
+</div>
+</body>
+
+  
+  
